@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170531025401) do
+ActiveRecord::Schema.define(version: 20170531070837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,26 @@ ActiveRecord::Schema.define(version: 20170531025401) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_authentications_on_user_id"
+  end
+
+  create_table "listings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.text "description"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "price"
+    t.string "city"
+    t.boolean "pets_allowed"
+    t.boolean "smoker"
+    t.string "property_types"
+    t.integer "room_number"
+    t.integer "bed_number"
+    t.integer "guest_number"
+    t.string "country"
+    t.string "state"
+    t.integer "zipcode"
+    t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,4 +58,5 @@ ActiveRecord::Schema.define(version: 20170531025401) do
   end
 
   add_foreign_key "authentications", "users"
+  add_foreign_key "listings", "users"
 end

@@ -61,3 +61,9 @@ gem 'omniauth-facebook'
 
 #Privacy protection
 gem "figaro"
+
+#Faker for seeding database
+gem 'faker'
+
+#pagination
+gem 'will_paginate', '~> 3.1.1'

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  description: MyText
+  address: MyString
+  num_of_bedrooms: 1
+
+two:
+  user: two
+  description: MyText
+  address: MyString
+  num_of_bedrooms: 1
